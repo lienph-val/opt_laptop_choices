@@ -398,7 +398,6 @@ print("preview")
 for i in range(min(3, len(final_df))):
     print(f"      {i+1}. {final_df['Model'].iloc[i][:100]}")
 
-# Top 5 Performance
 print("\nTop 5 Performance:")
 top5 = final_df.nlargest(5, 'Performance_Score')[
     ['Model', 'Price_VND', 'Performance_Score', 'Energy_Consumption']
@@ -409,7 +408,6 @@ for idx, (_, row) in enumerate(top5.iterrows(), 1):
           f"₫{row['Price_VND']:>12,.0f} | "
           f"P:{row['Performance_Score']:.3f} E:{row['Energy_Consumption']:.3f}")
 
-# Top 5 Budget
 print("\nTop 5 Budget:")
 top5_budget = final_df.nlargest(5, 'Budget_Score')[
     ['Model', 'Price_VND', 'Budget_Score', 'Performance_Score']
